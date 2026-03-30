@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Outer circle background -->
+  <circle cx="60" cy="60" r="58" fill="none" stroke="#0059bb" stroke-width="2"/>
+  
+  <!-- Code brackets symbolism - left bracket -->
+  <path d="M 35 45 L 40 40 L 40 80 L 35 75" stroke="#0059bb" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Code brackets symbolism - right bracket -->
+  <path d="M 85 45 L 80 40 L 80 80 L 85 75" stroke="#0059bb" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Letter D (stylized) -->
+  <g fill="#0059bb">
+    <!-- Vertical line of D -->
+    <rect x="50" y="38" width="3" height="44" rx="1.5"/>
+    <!-- Top curve of D -->
+    <path d="M 53 38 Q 68 38 68 50 Q 68 58 60 60 Q 68 62 68 70 Q 68 82 53 82 L 50 82 L 50 38 Z" fill="#0059bb" opacity="0.8"/>
+  </g>
+  
+  <!-- Small accent dots representing interconnectedness -->
+  <circle cx="75" cy="52" r="1.5" fill="#0059bb" opacity="0.6"/>
+  <circle cx="45" cy="68" r="1.5" fill="#0059bb" opacity="0.6"/>
+  <circle cx="70" cy="75" r="1.5" fill="#0059bb" opacity="0.6"/>
+</svg>

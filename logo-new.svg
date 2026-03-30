@@ -1,0 +1,58 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- Define gradients for light and dark modes -->
+  <defs>
+    <linearGradient id="gradientLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0059bb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0070ea;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradientDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5fa8ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#adc7ff;stop-opacity:1" />
+    </linearGradient>
+    <style>
+      :root {
+        --logo-gradient: url(#gradientLight);
+      }
+      html.dark {
+        --logo-gradient: url(#gradientDark);
+      }
+    </style>
+  </defs>
+  
+  <!-- Background circle for contrast -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="url(#gradientLight)" stroke-width="2" opacity="0.2"/>
+  
+  <!-- Main geometric shape - Modern web dev symbol -->
+  <g transform="translate(100, 100)">
+    <!-- Left triangle - HTML/Structure -->
+    <path d="M -35 -25 L -35 35 L -5 35 Z" fill="url(#gradientLight)" opacity="0.9"/>
+    
+    <!-- Center square - CSS/Styling -->
+    <rect x="-15" y="-25" width="30" height="30" fill="url(#gradientLight)" opacity="1" rx="3"/>
+    
+    <!-- Right triangle - JavaScript/Functionality -->
+    <path d="M 5 -25 L 35 -25 L 35 35 Z" fill="url(#gradientLight)" opacity="0.7"/>
+    
+    <!-- Center dot - Integration point -->
+    <circle cx="0" cy="0" r="5" fill="white" opacity="0.95"/>
+    
+    <!-- Top accent line - Modern touch -->
+    <line x1="-40" y1="-45" x2="40" y2="-45" stroke="url(#gradientLight)" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  </g>
+  
+  <!-- Apply dark mode colors -->
+  <style>
+    @media (prefers-color-scheme: dark) {
+      circle {
+        stroke: url(#gradientDark) !important;
+      }
+      path, rect, line {
+        fill: url(#gradientDark) !important;
+        stroke: url(#gradientDark) !important;
+      }
+    }
+  </style>
+  
+  <!-- Dark mode support via class -->
+  <script type="application/json" id="dark-mode-config">{"isDark": false}</script>
+</svg>

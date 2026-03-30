@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="DesarrolloTuWeb: Boutique web development studio. Sitios web profesionales, código limpio y diseño impecable. Soluciones personalizadas de alto rendimiento." />
+    <meta name="keywords" content="desarrollo web, diseño web, sitios web profesionales, e-commerce, diseño UX/UI, optimización SEO" />
+    <meta name="author" content="Nicolás y Martín - DesarrolloTuWeb" />
+    <meta name="theme-color" content="#0059bb" />
+    <title>DesarrolloTuWeb | Boutique Web Development | Desarrollo Web Profesional</title>
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="DesarrolloTuWeb - Desarrollo Web Profesional" />
+    <meta property="og:description" content="Creamos tu presencia web profesional. Código limpio, diseño impecable. Trato directo, sin intermediarios." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://desarrollotuweb.com/" />
+    <meta property="og:image" content="https://desarrollotuweb.com/logo.svg" />
+    <meta property="og:locale" content="es_AR" />
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="DesarrolloTuWeb - Desarrollo Web Profesional" />
+    <meta name="twitter:description" content="Creamos tu presencia web profesional. Código limpio, diseño impecable." />
+    <meta name="twitter:image" content="https://desarrollotuweb.com/logo.svg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://desarrollotuweb.com/" />
+    
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="logo.svg" />
+    
+    <!-- Tailwind & Scripts -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="script.js"></script>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body class="bg-background text-on-background font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+    <!-- Top Navigation Bar -->
+    <nav
+        class="fixed top-0 w-full z-50 h-20 bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-100 dark:border-slate-800">
+        <div class="flex justify-between items-center px-8 md:px-16 max-w-[1440px] mx-auto h-full w-full">
+            <a href="#inicio" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <img src="logo-new.svg" alt="DesarrolloTuWeb Logo" class="w-12 h-12" />
+                <span class="text-xl font-black tracking-tighter text-slate-900 dark:text-slate-50 font-headline">DesarrolloTuWeb</span>
+            </a>
+            <div class="hidden md:flex gap-10 items-center">
+                <a class="font-['Manrope'] font-bold tracking-tight text-sm uppercase text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 dark:border-blue-400 pb-1"
+                    href="#inicio">Inicio</a>
+                <a class="font-['Manrope'] font-bold tracking-tight text-sm uppercase text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+                    href="#nosotros">Nosotros</a>
+                <a class="font-['Manrope'] font-bold tracking-tight text-sm uppercase text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+                    href="#servicios">Servicios</a>
+                <a class="font-['Manrope'] font-bold tracking-tight text-sm uppercase text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+                    href="#portafolio">Portafolio</a>
+                <a class="font-['Manrope'] font-bold tracking-tight text-sm uppercase text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+                    href="#contacto">Contacto</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="toggleDarkMode()" class="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-full transition-all text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100" title="Cambiar tema">
+                    <span class="material-symbols-outlined block dark:hidden">light_mode</span>
+                    <span class="material-symbols-outlined hidden dark:block">dark_mode</span>
+                </button>
+                <button onclick="abrirModalCotizar()"
+                    class="bg-primary text-on-primary font-headline font-bold text-xs uppercase tracking-widest px-8 py-3 hover:bg-primary-container transition-all active:scale-95">
+                    Cotizar
+                </button>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <!-- Hero Section -->
+        <section class="pt-32 pb-20 px-8 md:px-16 max-w-[1440px] mx-auto min-h-[921px] flex flex-col justify-center"
+            id="inicio">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7">
+                    <span class="text-primary font-bold tracking-[0.2em] text-xs uppercase mb-6 block">Boutique Web
+                        Development</span>
+                    <h1
+                        class="font-headline font-extrabold text-5xl md:text-7xl text-on-surface leading-[1.1] mb-8 text-balance">
+                        Creamos tu presencia web profesional. <span
+                            class="text-outline-variant italic font-light">Código limpio, diseño impecable.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-on-surface-variant max-w-xl mb-10 leading-relaxed font-light">
+                        Nicolás y Martín: Tu equipo de confianza para transformar ideas en sitios web de alto
+                        rendimiento.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="abrirModalProyecto()"
+                            class="bg-primary text-on-primary font-headline font-bold px-10 py-5 text-sm uppercase tracking-widest hover:bg-primary-container transition-all">
+                            Empezá tu Proyecto
+                        </button>
+                        <a href="#portafolio"
+                            class="border border-outline-variant text-on-surface font-headline font-bold px-10 py-5 text-sm uppercase tracking-widest hover:bg-surface-container transition-all text-center inline-block">
+                            Ver Portafolio
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 relative">
+                    <div class="bg-surface-container-high aspect-square w-full relative overflow-hidden group">
+                        <img alt="Professional coding setup"
+                            class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all duration-700"
+                            data-alt="Professional monitors displaying clean source code"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlIgsqkpHIb5Cny0VKVoAERKfYjrMjKb_NKm4GrYuSb56eT7gcaGQK25OL-n5Htk7KM6ZC7PIbPDgJxzc56vgTKoSoQTf0uRg6Micpx0pZtHbtBNwuiBnNq13tWiKV_555vpqbH4ua0d6X-IqKNVtJBwqwbH81KpSj48imWi8_-RFxNm13pDTPEqXt5scZGLFPAsIZ98jEU5VTVv_r6Vwk9cmAxijq61_9gRTc-Ad1M3qdkzVY8ppA1dLpViiYb00Xm9dUHZ3wuhw" />
+                        <div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+                        <!-- Decorative geometric element -->
+                        <div class="absolute bottom-0 right-0 w-32 h-32 bg-primary"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Nuestra Esencia Section -->
+        <section class="bg-surface-container-low py-24 md:py-32" id="nosotros">
+            <div class="px-8 md:px-16 max-w-[1440px] mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
+                    <div class="relative min-h-[400px]">
+                        <img alt="Nicolás and Martín working" class="w-full h-full object-cover grayscale"
+                            data-alt="Two professional developers collaborating in modern office"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoGn1GeqbC-9LN6h2wr4KcvzWAhG574z24J1QAmZMTZFmifhmPtqSM0MaVvoCECbAg4UoBe4bkcMatwq5XhHtVrAS7Wz7OXezi1OSgJVkdFEo8hVABKPc1EcG8_0t0FJ6XyldNiYm5qauKHusepXlSTIzc0QNVzqLXZElmmSjvaTuaYT_ykvM4JB2PwbZsOZpV3-6DEjtsaGZj9jgK3fGrDthNgtsOFJkh5DZL9QrbZm5A3LxnErncWr9skYG7Tfher1tjXymBrXE" />
+                        <div
+                            class="absolute -bottom-8 -right-8 bg-surface px-8 py-8 shadow-xl hidden md:block border-l-4 border-primary">
+                            <p class="font-headline font-bold text-on-surface italic">"Compromiso técnico absoluto."</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <span class="text-primary font-bold tracking-[0.2em] text-xs uppercase mb-6 block">Nuestra
+                            Esencia</span>
+                        <h2
+                            class="font-headline font-extrabold text-4xl md:text-5xl text-on-surface mb-8 leading-tight">
+                            No somos una fábrica de sitios. Somos tus socios tecnológicos.
+                        </h2>
+                        <div class="w-20 h-1 bg-primary mb-8"></div>
+                        <p class="text-lg text-on-surface-variant leading-relaxed font-light mb-8">
+                            Entendemos que cada proyecto es una oportunidad para la excelencia. Nicolás y Martín ofrecen
+                            un trato directo, sin intermediarios, asegurando que cada línea de código responda a tus
+                            necesidades de negocio.
+                        </p>
+                        <div class="grid grid-cols-2 gap-8 pt-8 border-t border-outline-variant/30">
+                            <div>
+                                <h4 class="font-headline font-bold text-primary text-xl mb-2">Trato Directo</h4>
+                                <p class="text-sm text-on-surface-variant">Sin agencias lentas, solo nosotros y vos.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-headline font-bold text-primary text-xl mb-2">Medida</h4>
+                                <p class="text-sm text-on-surface-variant">Soluciones únicas, no plantillas genéricas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Servicios Section (Bento Style) -->
+        <section class="py-24 md:py-32 px-8 md:px-16 max-w-[1440px] mx-auto" id="servicios">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+                <div class="max-w-2xl">
+                    <span class="text-primary font-bold tracking-[0.2em] text-xs uppercase mb-6 block">Expertise
+                        Técnico</span>
+                    <h2 class="font-headline font-extrabold text-4xl md:text-5xl text-on-surface leading-tight">
+                        Servicios que escalan realidades.</h2>
+                </div>
+                <div class="text-on-surface-variant font-light max-w-xs text-right hidden lg:block">
+                    Utilizamos las tecnologías más robustas del mercado para garantizar longevidad y rapidez.
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-outline-variant/20">
+                <!-- Card 1 -->
+                <div
+                    class="p-12 border-r border-b md:border-b-0 border-outline-variant/20 group hover:bg-surface-container transition-colors duration-500">
+                    <div class="mb-10 text-primary">
+                        <span class="material-symbols-outlined !text-5xl">code</span>
+                    </div>
+                    <h3
+                        class="font-headline font-bold text-2xl mb-4 group-hover:translate-x-2 transition-transform duration-500">
+                        Desarrollo Frontend</h3>
+                    <p class="text-on-surface-variant leading-relaxed font-light">
+                        Interfaces interactivas y rápidas (React/HTML5). Optimizamos cada pixel para una respuesta
+                        inmediata y fluida.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="p-12 border-r border-b md:border-b-0 border-outline-variant/20 group hover:bg-surface-container transition-colors duration-500">
+                    <div class="mb-10 text-primary">
+                        <span class="material-symbols-outlined !text-5xl">view_quilt</span>
+                    </div>
+                    <h3
+                        class="font-headline font-bold text-2xl mb-4 group-hover:translate-x-2 transition-transform duration-500">
+                        Diseño UX/UI</h3>
+                    <p class="text-on-surface-variant leading-relaxed font-light">
+                        Experiencias centradas en el usuario que convierten. Arquitectura de información basada en datos
+                        y estética suiza.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="p-12 group hover:bg-surface-container transition-colors duration-500">
+                    <div class="mb-10 text-primary">
+                        <span class="material-symbols-outlined !text-5xl">speed</span>
+                    </div>
+                    <h3
+                        class="font-headline font-bold text-2xl mb-4 group-hover:translate-x-2 transition-transform duration-500">
+                        Optimización y SEO</h3>
+                    <p class="text-on-surface-variant leading-relaxed font-light">
+                        Sitios web que cargan al toque y rankean mejor. Rendimiento medido por Core Web Vitals y
+                        estructura semántica perfecta.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Portafolio Section -->
+        <section class="bg-on-background py-16 md:py-20" id="portafolio">
+            <div class="px-8 md:px-16 max-w-[1440px] mx-auto">
+                <div class="mb-16">
+                    <span
+                        class="text-primary-fixed-dim font-bold tracking-[0.2em] text-xs uppercase mb-6 block">Trabajos
+                        Recientes</span>
+                    <h2 class="font-headline font-extrabold text-4xl md:text-5xl text-surface leading-tight">Proyectos
+                        de Alto Impacto</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Project 1 -->
+                    <div class="relative aspect-video group overflow-hidden bg-surface-container-highest">
+                        <img alt="Project Alpha"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                            data-alt="Modern software interface dashboard on laptop screen"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCfLHnzNxvL3RKApgHmpP5IT4NDRFop0zADwF0AeBmKMm7rbgs5aqrt_0jGjk3nxt4pMFIcQsoju9bzT_Qigv8OXsYc2cnXQ-JQTCoZj2oDW9FE31yuNzpnwgipidjoV4EetCzxCD0szLF5I0uo-lcM_5kavQz1ZpPZRo-sIlrMjW41L0OSMoqyg2RzMA-4_zSHHYlKDOl8R5BhTSjxCOY8BLXVfuKdZb9I-7kTWV9JGaMnDEv9y8-of7R8pBpVlLS0vCFdROGYcY" />
+                        <div
+                            class="absolute inset-0 bg-on-background/0 group-hover:bg-on-background/80 transition-all duration-500 flex flex-col justify-end p-12 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100">
+                            <p class="text-primary font-bold text-xs uppercase tracking-widest mb-2">E-commerce de Lujo
+                            </p>
+                            <h3 class="text-surface font-headline font-bold text-3xl mb-4">Aura Jewelry</h3>
+                            <p class="text-surface-variant font-light text-sm max-w-sm mb-6">Stack: Next.js, Shopify
+                                Plus, Tailwind CSS.</p>
+                            <span
+                                class="text-surface border-b border-primary self-start text-xs uppercase tracking-widest pb-1 font-bold">Ver
+                                Detalles</span>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="relative aspect-video group overflow-hidden bg-surface-container-highest">
+                        <img alt="Project Beta"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                            data-alt="Clean minimalist website analytics and charts"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR96zT5CSBx4NpqNujpXF4JXnK5-aO4vuyL1J2RBljYw9JntNkK79lpgpb45Cc8HT7YzsgZBjFMnhfmgQhKIahefC0LXDR0NnqzgLuw-wKWDUuttYPAHn3GP_Un-C_fWpLdEmTosDtATX6UbO37R81l7Lc6ZHrGLmrD31f6fu8QRtZu_nYYwxU9Ym0wuVdEbQUznm_LWeqz8Jbnj3J7h94OnuJB8jEA9FeQq0XXnGITBDcJ3hb2Z6vthv0YDcarazWoiusUZtSVrE" />
+                        <div
+                            class="absolute inset-0 bg-on-background/0 group-hover:bg-on-background/80 transition-all duration-500 flex flex-col justify-end p-12 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100">
+                            <p class="text-primary font-bold text-xs uppercase tracking-widest mb-2">SaaS Fintech</p>
+                            <h3 class="text-surface font-headline font-bold text-3xl mb-4">Vortex Capital</h3>
+                            <p class="text-surface-variant font-light text-sm max-w-sm mb-6">Stack: React, D3.js,
+                                Node.js.</p>
+                            <span
+                                class="text-surface border-b border-primary self-start text-xs uppercase tracking-widest pb-1 font-bold">Ver
+                                Detalles</span>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="relative aspect-video group overflow-hidden bg-surface-container-highest md:col-span-2">
+                        <img alt="Ver Salud - Healthcare Management"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                            data-alt="Plataforma de gestión de salud Ver Salud - Consultoría médica domiciliaria"
+                            src="https://images.unsplash.com/photo-1576091160388-112f9fb53fe5?w=1200&h=675&fit=crop" />
+                        <div
+                            class="absolute inset-0 bg-on-background/0 group-hover:bg-on-background/80 transition-all duration-500 flex flex-col justify-end p-12 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100">
+                            <p class="text-primary font-bold text-xs uppercase tracking-widest mb-2">Healthcare Management</p>
+                            <h3 class="text-surface font-headline font-bold text-3xl mb-4">Ver Salud</h3>
+                            <p class="text-surface-variant font-light text-sm max-w-md mb-6">Stack: HTML5, CSS3, JavaScript. Optimización SEO y Performance. Google Ads + Analytics.</p>
+                            <a href="https://versalud.com.ar/" target="_blank"
+                                class="text-surface border-b border-primary self-start text-xs uppercase tracking-widest pb-1 font-bold hover:text-primary transition-colors">Ver
+                                Sitio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonios Section -->
+        <section class="py-24 md:py-32 px-8 md:px-16 overflow-hidden">
+            <div class="max-w-[1440px] mx-auto">
+                <div class="text-center mb-20">
+                    <span class="text-primary font-bold tracking-[0.2em] text-xs uppercase mb-6 block">Confianza</span>
+                    <h2 class="font-headline font-extrabold text-4xl md:text-5xl text-on-surface">Lo que dicen nuestros
+                        socios</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-surface-container-lowest p-10 border-l-4 border-primary relative">
+                        <div class="absolute top-8 right-8 text-surface-container-highest">
+                            <span class="material-symbols-outlined !text-6xl">format_quote</span>
+                        </div>
+                        <p class="text-on-surface-variant italic mb-8 relative z-10 font-light text-lg">
+                            "Trabajar con Nico y Martín fue la mejor decisión para nuestro e-commerce. Profesionales,
+                            rápidos y con un gusto estético superior."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-surface-container-highest">
+                                <img alt="Client portrait" class="w-full h-full object-cover grayscale"
+                                    data-alt="Portrait of a satisfied business professional"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF7BUY6cX6SzpTSvkZBRfQjQYqmxR9EJbcABzGklp1cBhnu_uKigMDq4535VynE5br5NwE8NsRGlpVRqcZ2JtMTRXCM6ilBrh7IKCSxCoQKqjwbSqIPGNTIKj-kuAnyBIwzWsjSVNmxvXt6Iss7n7h8S2ZulP2yu3v1nDi70WxiGllcVpcQu2Jds83JCUqa2ZzqX5HgjzE4FUjOCv3A34ziTiBafHsDBGiObRwzsfIM6BaARLLzSqFwt4Qw_1eF3JwytSXUl4iu9Y" />
+                            </div>
+                            <div>
+                                <p class="font-headline font-bold text-sm text-on-surface">Julián Rodríguez</p>
+                                <p class="text-xs text-on-surface-variant uppercase tracking-widest">CEO, Urban Style
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="bg-surface-container-lowest p-10 border-l-4 border-primary relative">
+                        <div class="absolute top-8 right-8 text-surface-container-highest">
+                            <span class="material-symbols-outlined !text-6xl">format_quote</span>
+                        </div>
+                        <p class="text-on-surface-variant italic mb-8 relative z-10 font-light text-lg">
+                            "Superaron nuestras expectativas técnicas. El sitio carga en menos de 1 segundo y el
+                            feedback de los usuarios es increíble."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-surface-container-highest">
+                                <img alt="Client portrait" class="w-full h-full object-cover grayscale"
+                                    data-alt="Portrait of a female executive smiling"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtTNrIKq_geaFr1QrJ_9E4XFUe8fPcd9vVsIIidCftUf1jhwhTeXurfDNWpvPoxtlsnB_4epaUBgHQL1qiljh6lpSqMatHf0lNnSEeX3kkzae69qnkYEVPB4FGWKU0sEZOB9K4ESwiznDkBYagtgciWWhFuc9a2kG_PdvrFAoJ_S54twel9nz6H4cyxqiNMOFUBf7L0kMZP4e4COdhOWNx5ewWUFljCTV7CouA85n177zhrs4f9C4Id5BFvOIOuqmq0TR06aSY8G8" />
+                            </div>
+                            <div>
+                                <p class="font-headline font-bold text-sm text-on-surface">Elena Weiss</p>
+                                <p class="text-xs text-on-surface-variant uppercase tracking-widest">Founder, TechSprint
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="bg-surface-container-lowest p-10 border-l-4 border-primary relative">
+                        <div class="absolute top-8 right-8 text-surface-container-highest">
+                            <span class="material-symbols-outlined !text-6xl">format_quote</span>
+                        </div>
+                        <p class="text-on-surface-variant italic mb-8 relative z-10 font-light text-lg">
+                            "Entienden el balance entre diseño y funcionalidad. No solo crearon un sitio, nos dieron una
+                            herramienta de venta potente."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-surface-container-highest">
+                                <img alt="Client portrait" class="w-full h-full object-cover grayscale"
+                                    data-alt="Portrait of a male tech manager"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxG57_Ka2ID4Z9_KrvWb_1JPLVvGgcwRKq7kz955vmCytsgqOtQ7MNN_NybKfbZaw004zD2vcid6Dhyn-Q1DO8LQUAOpFu3F0lKk_ws8kxsYeg0o11Rnr_-2B7N-OavTirT7rJ-DtV7ur9QacZVUSq1qTysfuVxotD_O4GjMzn3Xuz4gY9R-Y95BqPBRW_EdXT7XEANEJA7fS29uPBNgpQ1WkOpi_fmcgeVJ7s3PrgTIMferGXlUvItMHpvevZQVaffx_ONeQ20FQ" />
+                            </div>
+                            <div>
+                                <p class="font-headline font-bold text-sm text-on-surface">Marco Silva</p>
+                                <p class="text-xs text-on-surface-variant uppercase tracking-widest">CTO, Global
+                                    Logistics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Google Ads Section -->
+        <section class="py-24 md:py-32 px-8 md:px-16 bg-gradient-to-r from-primary/10 to-primary/5">
+            <div class="max-w-[1440px] mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <span class="text-primary font-bold tracking-[0.2em] text-xs uppercase mb-6 block">Potencia tu Presencia Online</span>
+                        <h2 class="font-headline font-extrabold text-4xl md:text-5xl text-on-surface mb-8 leading-tight">
+                            Google Ads: Lleva tu Negocio al Siguiente Nivel
+                        </h2>
+                        <p class="text-lg text-on-surface-variant mb-6 leading-relaxed font-light">
+                            ¿Ya tenés un sitio web pero no tiene el tráfico que esperabas? ¿O querés crear uno nuevo y asegurarte de que miles de personas lo conozcan desde el primer día?
+                        </p>
+                        <p class="text-lg text-on-surface-variant mb-8 leading-relaxed font-light">
+                            Con nuestras <span class="text-primary font-bold">campañas profesionales de Google Ads</span>, llegamos exactamente a las personas que buscan lo que ofrecés. Tráfico cualificado, conversiones reales, ROI medible.
+                        </p>
+                        
+                        <div class="space-y-4 mb-10">
+                            <div class="flex items-start gap-4">
+                                <span class="text-primary font-bold text-xl leading-none">✓</span>
+                                <div>
+                                    <h4 class="font-headline font-bold text-on-surface mb-1">Campañas Estratégicas</h4>
+                                    <p class="text-sm text-on-surface-variant">Diseñadas según tu industry y objetivos de negocio</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <span class="text-primary font-bold text-xl leading-none">✓</span>
+                                <div>
+                                    <h4 class="font-headline font-bold text-on-surface mb-1">Reportería Detallada</h4>
+                                    <p class="text-sm text-on-surface-variant">Metrics en tiempo real y análisis profundo con Google Analytics</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <span class="text-primary font-bold text-xl leading-none">✓</span>
+                                <div>
+                                    <h4 class="font-headline font-bold text-on-surface mb-1">Optimización Continua</h4>
+                                    <p class="text-sm text-on-surface-variant">Ajustamos constantemente para maximizar tu inversión</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <span class="text-primary font-bold text-xl leading-none">✓</span>
+                                <div>
+                                    <h4 class="font-headline font-bold text-on-surface mb-1">Trato Directo</h4>
+                                    <p class="text-sm text-on-surface-variant">Sin intermediarios. Nicolás y Martín gestionan tu campaña personalmente</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button onclick="abrirModalProyecto()" class="bg-primary text-on-primary font-headline font-bold px-8 py-4 text-sm uppercase tracking-widest rounded-md hover:bg-primary-container transition-all">
+                            Cotizar Campaña de Google Ads
+                        </button>
+                    </div>
+                    
+                    <div class="bg-surface-container-lowest p-8 rounded-lg border-2 border-primary/20">
+                        <h3 class="font-headline font-bold text-2xl text-on-surface mb-6">¿Cuándo Necesitás Google Ads?</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="pb-6 border-b border-outline-variant/20">
+                                <h4 class="font-headline font-bold text-primary mb-2">Sitio Nuevo</h4>
+                                <p class="text-sm text-on-surface-variant">
+                                    Creamos tu web con nosotros + campañas de publicidad = impacto inmediato desde el lanzamiento
+                                </p>
+                            </div>
+                            
+                            <div class="pb-6 border-b border-outline-variant/20">
+                                <h4 class="font-headline font-bold text-primary mb-2">Sitio Existente Sin Tráfico</h4>
+                                <p class="text-sm text-on-surface-variant">
+                                    Ya tenés presencia web pero nadie lo visita. Google Ads acelera tu visibilidad mientras mejoramos SEO
+                                </p>
+                            </div>
+                            
+                            <div class="pb-6 border-b border-outline-variant/20">
+                                <h4 class="font-headline font-bold text-primary mb-2">E-commerce</h4>
+                                <p class="text-sm text-on-surface-variant">
+                                    Personas que quieren comprar, exactamente cuando buscan tu producto. Conversión instantánea
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-headline font-bold text-primary mb-2">Servicios o Consultoría</h4>
+                                <p class="text-sm text-on-surface-variant">
+                                    Leads calificados de personas que ya están buscando lo que ofrecés. Lead generation garantizada
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 p-6 bg-primary/5 rounded-lg border border-primary/20">
+                            <p class="text-sm text-on-surface font-light">
+                                <span class="font-bold text-primary">💡 Pro Tip:</span> Si combinás sitio web profesional + Google Ads + Google Analytics, multiplicas exponencialmente tu capacidad de hacer crecer el negocio.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto Section -->
+        <section class="py-24 md:py-32 px-8 md:px-16 bg-surface-container" id="contacto">
+            <div class="max-w-[1440px] mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                    <div>
+                        <span
+                            class="text-primary font-bold tracking-[0.2em] text-xs uppercase mb-6 block">Contacto</span>
+                        <h2
+                            class="font-headline font-extrabold text-5xl md:text-6xl text-on-surface mb-10 leading-tight">
+                            ¿Listos para dar el salto web? Escribinos.
+                        </h2>
+                        <p class="text-xl text-on-surface-variant font-light mb-12">
+                            Estamos agendando proyectos para el próximo trimestre. Hablemos de tus metas y cómo
+                            alcanzarlas.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <span class="material-symbols-outlined text-primary">mail</span>
+                                <a href="mailto:info.desarrollotuweb@gmail.com" class="font-bold border-b border-primary/30 hover:text-primary transition-colors">info.desarrollotuweb@gmail.com</a>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="material-symbols-outlined text-primary">call</span>
+                                <a href="tel:+5491112345678" class="font-bold hover:text-primary transition-colors">+54 9 11 1234 5678</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-surface-container-lowest p-8 md:p-12 shadow-2xl">
+                        <form class="space-y-8" id="formularioContacto">
+                            <div class="relative">
+                                <input
+                                    class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 px-0 py-4 transition-all placeholder:text-outline/50 placeholder:uppercase placeholder:text-[10px] placeholder:tracking-widest dark:bg-transparent dark:text-slate-100 dark:border-slate-600 dark:focus:border-blue-400"
+                                    id="nombre" name="nombre" placeholder="Nombre completo" type="text" required />
+                            </div>
+                            <div class="relative">
+                                <input
+                                    class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 px-0 py-4 transition-all placeholder:text-outline/50 placeholder:uppercase placeholder:text-[10px] placeholder:tracking-widest dark:bg-transparent dark:text-slate-100 dark:border-slate-600 dark:focus:border-blue-400"
+                                    id="email" name="email" placeholder="Correo electrónico" type="email" required />
+                            </div>
+                            <div class="relative">
+                                <textarea
+                                    class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 px-0 py-4 transition-all placeholder:text-outline/50 placeholder:uppercase placeholder:text-[10px] placeholder:tracking-widest resize-none dark:bg-transparent dark:text-slate-100 dark:border-slate-600 dark:focus:border-blue-400"
+                                    id="message" name="message" placeholder="¿Cómo podemos ayudarte?"
+                                    rows="4" required></textarea>
+                            </div>
+                            <button
+                                class="w-full bg-primary text-on-primary font-headline font-bold text-sm uppercase tracking-widest py-6 hover:bg-primary-container hover:shadow-lg transition-all active:scale-95 dark:hover:bg-blue-700"
+                                type="submit">
+                                Enviar mensaje
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Modal: Empezá tu Proyecto -->
+    <div id="modalProyecto" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+        <div class="bg-surface-container-lowest rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-8 md:p-12">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="font-headline font-extrabold text-4xl text-on-surface">Empezá tu Proyecto</h2>
+                    <button onclick="document.getElementById('modalProyecto').classList.add('hidden')" class="text-on-surface hover:text-primary text-3xl leading-none">×</button>
+                </div>
+                
+                <p class="text-lg text-on-surface-variant mb-4 leading-relaxed font-light">
+                    <span class="text-primary font-bold">Transformá tu idea en realidad.</span> Es el momento perfecto para darle vida a ese proyecto que tanto imaginaste. Con DesarrolloTuWeb, no solo creamos un sitio web: creamos una herramienta que venderá, que conectará con tu audiencia y que dirá exactamente lo que querés comunicar.
+                </p>
+                
+                <p class="text-lg text-on-surface-variant mb-8 leading-relaxed font-light">
+                    Cada línea de código está pensada para convertir. Cada pixel posicionado estratégicamente. Cada interacción diseñada para enganchar. <span class="text-primary font-bold">Vos imaginas, nosotros ejecutamos.</span>
+                </p>
+                
+                <form id="formProyecto" class="space-y-6" onsubmit="validarFormProyecto(event)">
+                    <div>
+                        <label class="block text-sm font-bold text-on-surface mb-2 uppercase tracking-widest">Nombre Completo *</label>
+                        <input type="text" name="nombre" required class="w-full px-4 py-3 border border-outline-variant rounded-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 bg-surface-container-lowest" placeholder="Tu nombre completo" />
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-bold text-on-surface mb-2 uppercase tracking-widest">Email *</label>
+                        <input type="email" name="email" required class="w-full px-4 py-3 border border-outline-variant rounded-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 bg-surface-container-lowest" placeholder="tu@email.com" />
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-bold text-on-surface mb-2 uppercase tracking-widest">¿De qué trata tu proyecto? *</label>
+                        <textarea name="descripcion" required rows="4" class="w-full px-4 py-3 border border-outline-variant rounded-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 bg-surface-container-lowest" placeholder="Contanos brevemente qué querés lograr con tu sitio web..."></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-bold text-on-surface mb-2 uppercase tracking-widest">¿Cuál es tu presupuesto aproximado?</label>
+                        <select name="presupuesto" class="w-full px-4 py-3 border border-outline-variant rounded-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 bg-surface-container-lowest">
+                            <option value="">Seleccionar...</option>
+                            <option value="100-500">$100 - $500</option>
+                            <option value="500-1000">$500 - $1000</option>
+                            <option value="1000-5000">$1000 - $5000</option>
+                            <option value="5000+">$5000+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="flex gap-4 pt-4">
+                        <button type="submit" class="flex-1 bg-primary text-on-primary font-headline font-bold px-6 py-4 text-sm uppercase tracking-widest rounded-md hover:bg-primary-container transition-all">Enviar Propuesta</button>
+                        <button type="button" onclick="document.getElementById('modalProyecto').classList.add('hidden')" class="flex-1 border border-outline-variant text-on-surface font-headline font-bold px-6 py-4 text-sm uppercase tracking-widest rounded-md hover:bg-surface-container transition-all">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Cotizar -->
+    <div id="modalCotizar" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+        <div class="bg-surface-container-lowest rounded-lg shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-8 md:p-12">
+                <div class="flex justify-between items-center mb-8">
+                    <div>
+                        <h2 class="font-headline font-extrabold text-4xl text-on-surface">Nuestros Planes</h2>
+                        <p class="text-on-surface-variant mt-2">Elige la opción que mejor se ajuste a tu negocio</p>
+                    </div>
+                    <button onclick="document.getElementById('modalCotizar').classList.add('hidden')" class="text-on-surface hover:text-primary text-3xl leading-none">×</button>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Plan 1: Simple -->
+                    <div class="border border-outline-variant rounded-lg p-8 hover:border-primary hover:shadow-lg transition-all">
+                        <h3 class="font-headline font-bold text-2xl text-on-surface mb-2">Simple</h3>
+                        <p class="text-on-surface-variant text-sm mb-6">Perfecto para comenzar</p>
+                        
+                        <div class="mb-8">
+                            <span class="font-headline font-extrabold text-4xl text-primary">$100</span>
+                            <p class="text-on-surface-variant text-sm">USD</p>
+                        </div>
+                        
+                        <ul class="space-y-4 mb-8 text-sm text-on-surface-variant">
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                <span>Sitio estático profesional</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                <span>Branding básico de tu empresa</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                <span>Menú de navegación intuitivo</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                <span>Formulario de contacto</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                <span>Secciones personalizables</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                <span>Carga de imágenes propias</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                <span>Enlaces a redes sociales</span>
+                            </li>
+                        </ul>
+                        
+                        <button onclick="seleccionarPlan('Simple', 100)" class="w-full bg-outline-variant text-on-surface font-headline font-bold px-6 py-3 text-sm uppercase tracking-widest rounded-md hover:bg-primary hover:text-on-primary transition-all">Seleccionar Plan</button>
+                    </div>
+                    
+                    <!-- Plan 2: Professional -->
+                    <div class="border-2 border-primary rounded-lg p-8 shadow-lg scale-105 md:scale-100 relative">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Más Popular</div>
+                        
+                        <h3 class="font-headline font-bold text-2xl text-on-surface mb-2">Empresarial</h3>
+                        <p class="text-on-surface-variant text-sm mb-6">Para crecer tu negocio</p>
+                        
+                        <div class="mb-8">
+                            <span class="font-headline font-extrabold text-4xl text-primary">$300</span>
+                            <p class="text-on-surface-variant text-sm">USD</p>
+                        </div>
+                        
+                        <ul class="space-y-4 mb-8 text-sm text-on-surface-variant">
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                <span>Todo lo del plan Simple +</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                <span>Sitio dinámico con backend</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                <span>Email integrado en formularios</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                <span>Dashboard básico de admin</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                <span>Optimización SEO avanzada</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                <span>Integración Google Analytics</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                <span>3 meses de soporte</span>
+                            </li>
+                        </ul>
+                        
+                        <button onclick="seleccionarPlan('Empresarial', 300)" class="w-full bg-primary text-on-primary font-headline font-bold px-6 py-3 text-sm uppercase tracking-widest rounded-md hover:bg-primary-container transition-all">Seleccionar Plan</button>
+                    </div>
+                    
+                    <!-- Plan 3: Custom -->
+                    <div class="border border-outline-variant rounded-lg p-8 hover:border-primary hover:shadow-lg transition-all">
+                        <h3 class="font-headline font-bold text-2xl text-on-surface mb-2">Personalizado</h3>
+                        <p class="text-on-surface-variant text-sm mb-6">Solución a medida</p>
+                        
+                        <div class="mb-8">
+                            <span class="font-headline font-extrabold text-2xl text-primary">Consultar</span>
+                            <p class="text-on-surface-variant text-sm">Según tu proyecto</p>
+                        </div>
+                        
+                        <ul class="space-y-4 mb-8 text-sm text-on-surface-variant">
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                <span>Cualquier funcionalidad que necesites</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                <span>E-commerce integrado</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                <span>Sistema de reservas/citas</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                <span>Aplicaciones web progresivas</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                <span>Soporte y mantenimiento ilimitado</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                <span>Reunión de consultoría incluida</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">✓</span>
+                                <span>Escalabilidad garantizada</span>
+                            </li>
+                        </ul>
+                        
+                        <button onclick="abrirModalContacto()" class="w-full bg-outline-variant text-on-surface font-headline font-bold px-6 py-3 text-sm uppercase tracking-widest rounded-md hover:bg-primary hover:text-on-primary transition-all">Agendar Reunión</button>
+                    </div>
+                </div>
+                
+                <!-- Google Ads Banner -->
+                <div class="mt-12 pt-8 border-t border-outline-variant">
+                    <h4 class="font-headline font-bold text-xl text-on-surface mb-4">Potencia tu presencia con Google Ads</h4>
+                    <p class="text-on-surface-variant mb-4">
+                        Complementa tu sitio web con campañas de Google Ads profesionales. Alcanzá a tus clientes exactamente cuando te buscan y multiplicá tus conversiones.
+                    </p>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-on-surface-variant">
+                        <li class="flex items-start gap-2"><span class="text-primary font-bold">◆</span> Campañas de búsqueda segmentadas</li>
+                        <li class="flex items-start gap-2"><span class="text-primary font-bold">◆</span> Display ads en la red Google</li>
+                        <li class="flex items-start gap-2"><span class="text-primary font-bold">◆</span> Seguimiento completo de ROI</li>
+                        <li class="flex items-start gap-2"><span class="text-primary font-bold">◆</span> Optimización continua de rendimiento</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="w-full py-12 px-8 md:px-16 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 tonal-shift">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-[1440px] mx-auto w-full">
+            <div class="flex flex-col items-center md:items-start">
+                <div class="flex items-center gap-2 mb-2">
+                    <img src="logo.svg" alt="DesarrolloTuWeb Logo" class="w-6 h-6" />
+                    <span class="text-lg font-bold text-slate-900 dark:text-slate-100 font-headline">DesarrolloTuWeb</span>
+                </div>
+                <p class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 dark:text-slate-400">© 2026
+                    DesarrolloTuWeb. Precision Engineering for the Web.</p>
+            </div>
+            <div class="flex gap-8">
+                <a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                    href="#">Privacidad</a>
+                <a onclick="abrirModalTerminos()" class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors cursor-pointer"
+                    href="javascript:void(0)">Términos</a>
+                <a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                    href="#">Instagram</a>
+                <a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                    href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Modal Términos -->
+    <div id="modalTerminos" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-xl shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+            <!-- Header -->
+            <div class="sticky top-0 z-10 bg-gradient-to-r from-primary/10 to-primary/5 dark:from-primary/20 dark:to-primary/10 p-6 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Términos y Condiciones</h2>
+                <button onclick="document.getElementById('modalTerminos').classList.add('hidden')" class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            
+            <!-- Content -->
+            <div class="p-8 space-y-8 text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                
+                <section>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3">1. Aceptación de Términos</h3>
+                    <p>Al acceder y utilizar este sitio web, aceptas vincularte por estos Términos y Condiciones. Si no estás de acuerdo con alguna parte de estos términos, no podrás usar el sitio. DesarrolloTuWeb se reserva el derecho de modificar estos términos en cualquier momento sin aviso previo.</p>
+                </section>
+                
+                <section>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3">2. Servicios Ofrecidos</h3>
+                    <p>DesarrolloTuWeb ofrece servicios de desarrollo web, consultoría digital, y campañas de marketing online. Los servicios específicos serán detallados en propuestas individuales y contratos separados. Nos reservamos el derecho de declinar cualquier proyecto según nuestro criterio profesional.</p>
+                </section>
+                
+                <section>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3">3. Derechos de Propiedad Intelectual</h3>
+                    <p>Todo contenido original creado por DesarrolloTuWeb como parte de nuestros servicios será transferido al cliente al completarse el proyecto y efectuado el pago completo. El cliente otorga a DesarrolloTuWeb el derecho de usar proyectos completados como referencias de portafolio y estudios de casos.</p>
+                </section>
+                
+                <section>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3">4. Confidencialidad</h3>
+                    <p>DesarrolloTuWeb respeta la confidencialidad de la información del cliente. Toda información sensible será mantenida bajo estricta confidencialidad. Sin embargo, puede ser divulgada si es requerido por ley o para proteger nuestros derechos legales.</p>
+                </section>
+                
+                <section>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3">5. Políticas de Pago</h3>
+                    <p>Los términos de pago serán establecidos por proyectos individuales. A menos que se acuerde lo contrario, se requiere un depósito del 50% para iniciar el trabajo, con el saldo debido a la entrega. Los servicios no serán entregados hasta que todo pago sea recibido. Se cobrarán cargos por demora del 1.5% mensual sobre saldos vencidos.</p>
+                </section>
+                
+                <section>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3">6. Límites de Responsabilidad</h3>
+                    <p>DesarrolloTuWeb no será responsable por: (a) daños indirectos, incidentales, especiales o punitivos; (b) pérdida de datos, ingresos o ganancias; (c) interrupción de servicios causada por terceros o eventos fuera de nuestro control. Nuestra responsabilidad máxima es limitada al monto total pagado por los servicios en cuestión.</p>
+                </section>
+                
+                <section>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3">7. Garantías Limitadas</h3>
+                    <p>DesarrolloTuWeb proporciona servicios "tal como están". No otorgamos garantías explícitas o implícitas respecto a la funcionalidad, comerciabilidad o idoneidad para un propósito particular. Proporcionamos soporte razonable para corregir defectos identificados dentro de 30 días de entrega.</p>
+                </section>
+                
+                <section>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3">8. Terminación</h3>
+                    <p>DesarrolloTuWeb puede rescindir un contrato si el cliente incumple sus obligaciones de pago o genera demandas irrazonables. El cliente puede rescindir con 30 días de notificación previa, siendo responsable por todos los trabajos completados y gastos incurridos hasta esa fecha.</p>
+                </section>
+                
+                <section>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3">9. Soporte y Mantenimiento</h3>
+                    <p>El soporte post-lanzamiento y mantenimiento son servicios opcionales sujetos a términos separados. El soporte técnico está disponible durante horas de oficina. Se pueden aplicar cargos por horas trabajadas fuera de estos horarios.</p>
+                </section>
+                
+                <section>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3">10. Privacidad de Datos</h3>
+                    <p>Nos comprometemos a proteger tu información personal. Los datos recolectados a través de nuestro sitio web y servicios se utilizan únicamente para proporcionar nuestros servicios y comunicaciones relevantes. No vendemos ni compartimos información personal con terceros sin tu consentimiento.</p>
+                </section>
+                
+                <section>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3">11. Ley Aplicable y Jurisdicción</h3>
+                    <p>Estos Términos y Condiciones están regidos por las leyes de la República Argentina. Ambas partes aceptan la jurisdicción exclusiva de los tribunales competentes en Buenos Aires, Argentina para resolver cualquier disputa.</p>
+                </section>
+                
+                <section>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3">12. Contacto</h3>
+                    <p>Para preguntas sobre estos Términos y Condiciones, por favor contacta a: <a href="mailto:info.desarrollotuweb@gmail.com" class="text-primary hover:underline">info.desarrollotuweb@gmail.com</a></p>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>
