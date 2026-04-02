@@ -3,11 +3,11 @@ tailwind.config = {
     theme: {
         extend: {
             colors: {
-                "surface-container-high": "#e6e8ea",
-                "primary": "#0059bb",
+                "surface-container-high": "#e6ebf0",
+                "primary": "#006da4",
                 "on-surface-variant": "#414754",
-                "on-secondary-fixed": "#001a41",
-                "surface-container": "#eceef0",
+                "on-secondary-fixed": "#03273c",
+                "surface-container": "#edf1f5",
                 "on-primary": "#ffffff",
                 "on-primary-container": "#fefcff",
                 "surface-variant": "#e0e3e5",
@@ -17,38 +17,38 @@ tailwind.config = {
                 "on-error-container": "#93000a",
                 "on-tertiary": "#ffffff",
                 "outline": "#717786",
-                "on-background": "#191c1e",
+                "on-background": "#051720",
                 "error": "#ba1a1a",
                 "tertiary": "#9e3d00",
-                "on-primary-fixed": "#001a41",
-                "surface-container-low": "#f2f4f6",
+                "on-primary-fixed": "#003554",
+                "surface-container-low": "#f4f7f9",
                 "secondary-fixed-dim": "#adc7ff",
                 "on-tertiary-fixed-variant": "#7c2e00",
                 "tertiary-fixed-dim": "#ffb695",
                 "secondary-fixed": "#d8e2ff",
-                "on-secondary-fixed-variant": "#26467c",
-                "background": "#f7f9fb",
+                "on-secondary-fixed-variant": "#004d74",
+                "background": "#f0f4f8",
                 "surface-container-lowest": "#ffffff",
                 "on-tertiary-fixed": "#351000",
-                "on-surface": "#191c1e",
+                "on-surface": "#051720",
                 "inverse-primary": "#adc7ff",
-                "on-secondary-container": "#2f4e85",
+                "on-secondary-container": "#03273c",
                 "primary-fixed": "#d8e2ff",
                 "surface-dim": "#d8dadc",
                 "on-error": "#ffffff",
-                "primary-container": "#0070ea",
-                "surface-tint": "#005bc0",
+                "primary-container": "#004d74",
+                "surface-tint": "#006da4",
                 "tertiary-container": "#c64f00",
                 "error-container": "#ffdad6",
-                "surface": "#f7f9fb",
+                "surface": "#ffffff",
                 "outline-variant": "#c1c6d7",
-                "on-primary-fixed-variant": "#004493",
-                "inverse-surface": "#2d3133",
-                "surface-bright": "#f7f9fb",
+                "on-primary-fixed-variant": "#003554",
+                "inverse-surface": "#051720",
+                "surface-bright": "#ffffff",
                 "on-secondary": "#ffffff",
                 "inverse-on-surface": "#eff1f3",
-                "secondary": "#405e96",
-                "surface-container-highest": "#e0e3e5",
+                "secondary": "#004d74",
+                "surface-container-highest": "#dfe4ea",
                 "tertiary-fixed": "#ffdbcc"
             },
             fontFamily: {
@@ -56,7 +56,7 @@ tailwind.config = {
                 "body": ["Inter"],
                 "label": ["Inter"]
             },
-            borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+            borderRadius: { "full": "9999px" },
         },
     },
 };
@@ -280,7 +280,27 @@ function mostrarExito(form, mensaje) {
     alert(mensaje);
 }
 
-// ===== TERMS MODAL =====
+// ===== MOBILE MENU =====
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('mobileMenuBtn');
+    const isOpen = !menu.classList.contains('hidden');
+    if (isOpen) {
+        menu.classList.add('hidden');
+        btn.querySelector('.material-symbols-outlined').textContent = 'menu';
+    } else {
+        menu.classList.remove('hidden');
+        btn.querySelector('.material-symbols-outlined').textContent = 'close';
+    }
+}
+
+function closeMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('mobileMenuBtn');
+    if (menu) menu.classList.add('hidden');
+    if (btn) btn.querySelector('.material-symbols-outlined').textContent = 'menu';
+}
+
 function abrirModalTerminos() {
     document.getElementById('modalTerminos').classList.remove('hidden');
 }
@@ -301,14 +321,10 @@ function toggleDarkMode() {
         html.classList.remove('dark');
         html.classList.add('light');
         localStorage.setItem('theme', 'light');
-        document.body.style.backgroundColor = '#f7f9fb';
-        document.body.style.color = '#191c1e';
     } else {
         html.classList.add('dark');
         html.classList.remove('light');
         localStorage.setItem('theme', 'dark');
-        document.body.style.backgroundColor = '#0f172a';
-        document.body.style.color = '#f1f5f9';
     }
     
     // Trigger a custom event for any third-party integrations
@@ -317,11 +333,14 @@ function toggleDarkMode() {
 
 // Initialize dark mode from localStorage and setup click-outside handlers
 document.addEventListener('DOMContentLoaded', function() {
-    // Dark mode initialization
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    // Dark mode initialization with OS preference fallback
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDarkTheme = savedTheme === 'dark' || (!savedTheme && systemPrefersDark);
+    
     const html = document.documentElement;
     
-    if (savedTheme === 'dark') {
+    if (isDarkTheme) {
         html.classList.add('dark');
         html.classList.remove('light');
     } else {
@@ -370,6 +389,50 @@ document.addEventListener('DOMContentLoaded', function() {
             button.addEventListener('click', abrirModalProyecto);
         } else if (text === 'Cotizar') {
             button.addEventListener('click', abrirModalCotizar);
+        }
+    });
+
+    // Intersection Observer for Navbar Links Active State
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.3
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute("id");
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === "#" + id) {
+                        link.classList.add("active");
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+    // Close mobile menu on scroll
+    window.addEventListener('scroll', () => {
+        closeMobileMenu();
+    }, { passive: true });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        const menu = document.getElementById('mobileMenu');
+        const btn = document.getElementById('mobileMenuBtn');
+        if (menu && btn && !menu.classList.contains('hidden')) {
+            if (!menu.contains(e.target) && !btn.contains(e.target)) {
+                closeMobileMenu();
+            }
         }
     });
 });

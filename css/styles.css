@@ -1,0 +1,281 @@
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+    font-size: 24px;
+}
+
+/* ===== MAIN COMPONENTS ===== */
+.main-nav {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+html.dark .main-nav {
+    background-color: rgba(5, 23, 32, 0.95);
+}
+
+.nav-link {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    color: #475569;
+    transition: color 0.15s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #0f172a;
+}
+
+.nav-link.active {
+    color: #006da4;
+    border-bottom: 2px solid #006da4;
+    padding-bottom: 0.25rem;
+}
+
+html.dark .nav-link {
+    color: #94a3b8;
+}
+
+html.dark .nav-link:hover {
+    color: #006da4 !important;
+}
+
+html.dark .nav-link.active {
+    color: #adc7ff;
+    border-color: #adc7ff;
+}
+
+.btn-theme-toggle {
+    color: #475569;
+}
+
+.btn-theme-toggle:hover {
+    background-color: #e2e8f0;
+    color: #0f172a;
+}
+
+html.dark .btn-theme-toggle {
+    color: #94a3b8;
+}
+
+html.dark .btn-theme-toggle:hover {
+    background-color: #334155;
+    color: #f1f5f9;
+}
+
+.btn-primary {
+    background-color: #006da4;
+    color: #ffffff;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #004d74;
+}
+
+.btn-primary:active {
+    transform: scale(0.95);
+}
+
+.text-balance {
+    text-wrap: balance;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* ===== DARK MODE ENHANCEMENTS ===== */
+html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark {
+    background-color: #051720;
+    color: #e0e3e5;
+}
+
+html.dark body {
+    background-color: inherit;
+    color: inherit;
+}
+
+html.dark section {
+    background-color: inherit;
+}
+
+html.dark nav {
+    background-color: rgba(5, 23, 32, 0.95) !important;
+}
+
+/* Form inputs dark mode */
+html.dark input,
+html.dark textarea,
+html.dark select {
+    background-color: #003554;
+    color: #ffffff;
+    border-color: #004d74;
+}
+
+html.dark input:focus,
+html.dark textarea:focus,
+html.dark select:focus {
+    border-color: #006da4;
+    background-color: #03273c;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+    color: #8fa0ab;
+}
+
+/* Dark mode for cards and containers */
+html.dark .bg-white,
+html.dark .bg-surface-container-lowest {
+    background-color: #003554 !important;
+    color: #ffffff;
+}
+
+html.dark .bg-surface-container-low,
+html.dark .bg-surface-container,
+html.dark .bg-surface-container-high,
+html.dark .bg-surface-container-highest {
+    background-color: #03273c !important;
+    color: #ffffff;
+}
+
+html.dark .text-on-surface {
+    color: #ffffff !important;
+}
+
+html.dark .text-on-surface-variant {
+    color: #c1c6d7 !important;
+}
+
+html.dark .text-slate-900 {
+    color: #ffffff !important;
+}
+
+html.dark .text-slate-600,
+html.dark .text-slate-700 {
+    color: #c1c6d7 !important;
+}
+
+/* Fix visibility on hover for dark mode navigation and icons */
+html.dark .hover\:text-slate-900:hover,
+html.dark a:hover,
+html.dark button:hover .material-symbols-outlined {
+    color: #006da4 !important;
+}
+
+html.dark button:hover, html.dark a.hover\:text-blue-700:hover {
+    color: #006da4 !important;
+}
+
+html.dark .border-slate-100,
+html.dark .border-slate-200 {
+    border-color: #004d74 !important;
+}
+
+/* ===== FORM VALIDATION STYLES ===== */
+.error-message {
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+input.error-field,
+textarea.error-field {
+    border-color: #ef4444 !important;
+    background-color: rgba(239, 68, 68, 0.05);
+}
+
+html.dark input.error-field,
+html.dark textarea.error-field {
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Modal improvements for dark mode */
+html.dark .rounded-xl,
+html.dark .rounded-lg {
+    background-color: #003554;
+    color: #ffffff;
+}
+
+html.dark #modalProyecto,
+html.dark #modalCotizar,
+html.dark #modalTerminos {
+    --background-overlay: rgba(0, 0, 0, 0.7);
+    background-color: var(--background-overlay);
+}
+
+/* Smooth transitions */
+* {
+    transition-property: background-color, border-color, color;
+    transition-duration: 0.2s;
+}
+
+/* Override for performance on specific elements */
+button, a, .group {
+    transition-property: background-color, border-color, color, opacity, transform;
+    transition-duration: 0.3s;
+}
+
+/* ===== RESPONSIVE MOBILE IMPROVEMENTS ===== */
+@media (max-width: 640px) {
+    /* Hero section - reduce text sizes on very small screens */
+    .font-headline.font-extrabold.text-5xl {
+        font-size: 2.25rem;
+        line-height: 1.15;
+    }
+
+    /* Reduce hero min-height on mobile */
+    section#inicio {
+        min-height: 100svh;
+        padding-top: 6rem;
+        padding-bottom: 3rem;
+    }
+
+    /* Service cards - reduce padding on mobile */
+    section#servicios .p-12 {
+        padding: 2rem;
+    }
+
+    /* Portfolio - reduce padding on mobile */
+    section#portafolio .px-8 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* Contact section heading */
+    section#contacto h2 {
+        font-size: 2.25rem;
+    }
+
+    /* Pricing modal - stacked on mobile */
+    #modalCotizar .grid-cols-1 {
+        gap: 1.5rem;
+    }
+}
+
+/* Mobile menu link hover */
+#mobileMenu .nav-link {
+    font-size: 0.9375rem;
+    display: block;
+    width: 100%;
+}
